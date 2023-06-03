@@ -25,7 +25,7 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        //[SecuredOperation("productAdd")]
+        [SecuredOperation("productAdd")]
         //[ValidationAspect(typeof(ProductValidator))]
         //[CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
@@ -59,7 +59,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductsListed);
         }
 
-        //[CacheAspect]
+        [CacheAspect]
         public IDataResult<List<ProductDetailDto>> GetAllProductDetailByCategoryId(int categoryId)
         {
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetAllProductDetailByCategoryId(categoryId),"Başarılı");
@@ -136,11 +136,6 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetAllProductDetails(),"Başarılı");
         }
 
-        public IResult AddProductDetail(ProductDetailDto productDetailDto)
-        {
-            _productDal.AddProductDetail(productDetailDto);
-            return new SuccessResult("Ürün başarıyla eklendi");
-        }
 
         public IDataResult<List<ProductSalesDto>> GetProductSaleByUserId(int userId)
         {

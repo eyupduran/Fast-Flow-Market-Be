@@ -23,38 +23,6 @@ namespace WebAPI.Controllers
             _userService = userService;
         }
 
-        //[HttpPost("login")]
-        //public ActionResult Login(UserForLoginDto userForLoginDto)
-        //{
-        //    var userToLogin = _authService.Login(userForLoginDto);
-        //    if (!userToLogin.Success)
-        //    {
-        //        return BadRequest(userToLogin);
-        //    }
-
-        //    var tokenResult = _authService.CreateAccessToken(userToLogin.Data);
-        //    if (!tokenResult.Success)
-        //    {
-        //        return BadRequest(tokenResult);
-        //    }
-
-        //    var operationClaims = _authService.GetUserOperationClaims(new User { Id = userToLogin.Data.Id });
-
-        //    AuthDto authDto = new AuthDto
-        //    {
-        //        UserId = userToLogin.Data.Id,
-        //        FirstName = userToLogin.Data.FirstName,
-        //        LastName = userToLogin.Data.LastName,
-        //        Token = tokenResult.Data.Token,
-        //        Expiration = tokenResult.Data.Expiration,
-        //        OperationClaims = operationClaims,
-        //        UserType = userToLogin.Data.UserType,
-        //        Email = userToLogin.Data.Email
-        //    };
-        //    var result = new SuccessDataResult<AuthDto>(authDto, userToLogin.Message);
-        //    return Ok(result);
-        //}
-
         [HttpPost("login")]
         public ActionResult Login(UserForLoginDto userForLoginDto)
         {

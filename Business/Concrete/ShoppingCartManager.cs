@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -20,6 +21,7 @@ namespace Business.Concrete
             _shoppingCartDal = shoppingCartDal;
         }
 
+        [SecuredOperation("user")]
         public IResult Add(ShoppingCart shoppingCart)
         {
             var result = GetShoppingCartDetailByUserIdAndProductId(shoppingCart.UserId, shoppingCart.ProductId);

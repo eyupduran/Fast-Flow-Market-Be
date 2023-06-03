@@ -18,35 +18,6 @@ namespace DataAccess.Concrete.EntityFramework
     public class EfProductDal : EfEntityRepositoryBase<Product, ETradeContext>, IProductDal
     {
         public IProductDal _productDal;
-        public IProductImageDal _productImageDal;
-        public void AddProductDetail(ProductDetailDto productDetailDto)
-        {
-            using (ETradeContext context = new ETradeContext())
-            {
-
-                ProductImage productImage = new ProductImage();
-                productImage.ProductImageId = productDetailDto.ProductImageId;
-                productImage.ImagePath = productDetailDto.ImagePath;
-
-                var addedEntity2 = context.Entry(productImage);
-                addedEntity2.State = EntityState.Added;
-                context.SaveChanges();
-
-                Product product = new Product();
-                product.ProductId = productDetailDto.ProductId; 
-                product.ProductName = productDetailDto.ProductName;
-                product.Description = productDetailDto.Description;
-                product.UnitPrice=productDetailDto.UnitPrice;
-                product.CategoryId = productDetailDto.CategoryId;
-                product.ProductImageId = productImage.ProductImageId;
-
-                var addedEntity1 = context.Entry(product);
-                addedEntity1.State = EntityState.Added;
-                context.SaveChanges();
-           
-           
-            }
-        }
 
         public List<ProductDetailDto> GetAllProductDetailByCategoryId(int categoryId)
         {

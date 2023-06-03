@@ -19,7 +19,6 @@ namespace Business.Abstract
         IResult AddTransactionalTest(Product product);
 
         IDataResult<List<ProductDetailDto>> GetAllProductDetails();
-        IResult AddProductDetail(ProductDetailDto productDetailDto);
         IDataResult<List<ProductSalesDto>> GetProductSaleByUserId(int userId);
 
         IDataResult<ProductDetailDto> GetProductDetailByProductId(int productId);

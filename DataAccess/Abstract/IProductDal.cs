@@ -10,7 +10,6 @@ namespace DataAccess.Abstract
     public interface IProductDal : IEntityRepository<Product>
     {
         List<ProductDetailDto> GetAllProductDetails();
-        void AddProductDetail(ProductDetailDto productDetailDto);
         List<ProductDetailDto> GetAllProductDetailByCategoryId(int categoryId);
         ProductDetailDto GetProductDetailByProductId(int productId);
 

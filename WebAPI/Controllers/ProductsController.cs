@@ -114,17 +114,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("addproductdetails")]
-        public IActionResult AddProductDetail(ProductDetailDto productDetailDto)
-        {
-            var result = _productService.AddProductDetail(productDetailDto);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-
-            return BadRequest(result);
-        }
+ 
         //GetProductDetailByProductId
 
         [HttpGet("Getproductdetailbypoductıd")]
