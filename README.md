@@ -1,5 +1,7 @@
 ## PROJECT AND USED TECHNOLOGIES
 This project is built on a layered architectural structure. This structure is basically the communication of 4 separate layers with each other. These layers are Entities, Data Access, Business and WEB API layers, respectively. Apart from these, there is another layer called Core and this layer contains structures that can be used in common in the project. Nuget is used for the management of outsourcing packages in Backend.
+
+You can find application codes and interface images in frontend codes.
 Frontend Codes Link: <https://github.com/eyupduran/Fast-Flow-Market-Fe>
 
 #### LAYERS AND HOW TO WORK
